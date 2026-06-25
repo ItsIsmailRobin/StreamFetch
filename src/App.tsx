@@ -65,10 +65,10 @@ export default function App() {
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-100">
       <section className="mx-auto flex min-h-screen w-full max-w-5xl flex-col justify-center px-6 py-20 md:px-10">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">FifaLive Stream Watcher</p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-6xl">Live URL mirror from GitHub Actions</h1>
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-400">FifaLive Stream Watcher By Rev71</p>
+        <h1 className="mt-3 text-4xl font-semibold tracking-tight md:text-6xl">Live URL mirror with GitHub Actions</h1>
         <p className="mt-4 max-w-3xl text-zinc-300 md:text-lg">
-          This page reads <code className="text-zinc-100">/stream.txt</code>, which is auto-updated by your workflow when the
+          This page reads <code className="text-zinc-100">/stream.txt</code>, which is auto-updated by  workflow when the
           source video link changes. GitHub Actions checks the target once every 5 minutes.
         </p>
 
