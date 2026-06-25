@@ -1,0 +1,26 @@
+{
+  "headers": [
+    {
+      "source": "/stream.m3u8",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/vnd.apple.mpegurl"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/stream.txt",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate"
+        }
+      ]
+    }
+  ]
+}

@@ -31,7 +31,14 @@ async function run() {
   }
 
   const checkedAt = new Date().toISOString();
-  const m3u8Content = `#EXTM3U\n${streamUrl}\n`;
+  // Generate a strict HLS master playlist so browser HLS parsers accept it.
+  const m3u8Content = [
+    "#EXTM3U",
+    "#EXT-X-VERSION:3",
+    "#EXT-X-STREAM-INF:BANDWIDTH=2500000",
+    streamUrl,
+    "",
+  ].join("\n");
 
   writeFileSync("Stream.txt", `${streamUrl}\n`, "utf8");
   writeFileSync("stream.txt", `${streamUrl}\n`, "utf8");
