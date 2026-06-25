@@ -10,6 +10,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   const streamTxtPath = "/stream.txt";
+  const streamM3u8Path = "/stream.m3u8";
 
   const humanCheckedAt = useMemo(() => {
     if (!lastChecked) return "Never";
@@ -91,6 +92,9 @@ export default function App() {
           ) : null}
           <a href={streamTxtPath} target="_blank" rel="noreferrer" className="border border-zinc-700 px-4 py-2 transition hover:border-zinc-500">
             Open /stream.txt
+          </a>
+          <a href={streamM3u8Path} target="_blank" rel="noreferrer" className="border border-zinc-700 px-4 py-2 transition hover:border-zinc-500">
+            Open /stream.m3u8
           </a>
         </div>
       </section>
