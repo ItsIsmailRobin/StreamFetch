@@ -2,8 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 
 const REFRESH_MS = 15_000;
 const WORKFLOW_FILE = "update-stream.yml";
-const GITHUB_OWNER = "YOUR_GITHUB_USERNAME";
-const GITHUB_REPO = "YOUR_REPO_NAME";
+const GITHUB_OWNER = "ItsIsmailRobin";
+const GITHUB_REPO = "StreamFetch";
 const GITHUB_BRANCH = "main";
 
 export default function App() {
