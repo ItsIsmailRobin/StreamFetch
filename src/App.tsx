@@ -4,6 +4,7 @@ const REFRESH_MS = 15_000;
 
 export default function App() {
   const [streamUrl, setStreamUrl] = useState("");
+  const [heartbeat, setHeartbeat] = useState("");
   const [lastChecked, setLastChecked] = useState<Date | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -32,8 +33,11 @@ export default function App() {
         }
 
         const content = (await response.text()).trim();
+        const heartbeatResponse = await fetch(`/LastCheck.txt?t=${Date.now()}`, { cache: "no-store" });
+        const heartbeatText = heartbeatResponse.ok ? (await heartbeatResponse.text()).trim() : "";
         if (active) {
           setStreamUrl(content);
+          setHeartbeat(heartbeatText);
           setLastChecked(new Date());
           setLoading(false);
         }
@@ -71,6 +75,7 @@ export default function App() {
 
         <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-zinc-300">
           <span>Last checked: {humanCheckedAt}</span>
+          {heartbeat ? <span>Workflow heartbeat: {heartbeat}</span> : null}
           {error ? <span className="text-rose-400">Error: {error}</span> : null}
           {streamUrl ? (
             <a

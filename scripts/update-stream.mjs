@@ -30,9 +30,14 @@ async function run() {
     throw new Error("Could not find <source src=\"...\"> URL in response HTML.");
   }
 
+  const checkedAt = new Date().toISOString();
+
   writeFileSync("Stream.txt", `${streamUrl}\n`, "utf8");
   writeFileSync("public/Stream.txt", `${streamUrl}\n`, "utf8");
+  writeFileSync("LastCheck.txt", `${checkedAt}\n`, "utf8");
+  writeFileSync("public/LastCheck.txt", `${checkedAt}\n`, "utf8");
   console.log(`Stream URL updated: ${streamUrl}`);
+  console.log(`Heartbeat updated: ${checkedAt}`);
 }
 
 run().catch((error) => {
