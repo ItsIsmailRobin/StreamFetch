@@ -30,16 +30,16 @@ jobs:
       - name: Extract latest stream URL
         run: node scripts/update-stream.mjs
 
-      - name: Commit changes if Stream.txt changed
+      - name: Commit changes if stream or heartbeat changed
         run: |
-          if git diff --quiet Stream.txt public/Stream.txt; then
-            echo "No stream URL changes detected."
+          if git diff --quiet Stream.txt public/Stream.txt LastCheck.txt public/LastCheck.txt; then
+            echo "No changes detected."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Stream.txt public/Stream.txt
-          git commit -m "chore: update stream URL"
+          git add Stream.txt public/Stream.txt LastCheck.txt public/LastCheck.txt
+          git commit -m "chore: update stream and heartbeat"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push
