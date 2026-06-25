@@ -33,7 +33,9 @@ async function run() {
   const checkedAt = new Date().toISOString();
 
   writeFileSync("Stream.txt", `${streamUrl}\n`, "utf8");
+  writeFileSync("stream.txt", `${streamUrl}\n`, "utf8");
   writeFileSync("public/Stream.txt", `${streamUrl}\n`, "utf8");
+  writeFileSync("public/stream.txt", `${streamUrl}\n`, "utf8");
   writeFileSync("LastCheck.txt", `${checkedAt}\n`, "utf8");
   writeFileSync("public/LastCheck.txt", `${checkedAt}\n`, "utf8");
   console.log(`Stream URL updated: ${streamUrl}`);
