@@ -1,6 +1,16 @@
 name: Update Stream URL
 
 on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "Stream.txt"
+      - "stream.txt"
+      - "public/Stream.txt"
+      - "public/stream.txt"
+      - "LastCheck.txt"
+      - "public/LastCheck.txt"
   schedule:
     # Run every 5 minutes.
     - cron: "*/5 * * * *"
@@ -11,7 +21,7 @@ permissions:
 
 concurrency:
   group: update-stream-url
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   update-stream:
