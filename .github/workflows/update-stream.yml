@@ -4,17 +4,10 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - "Stream.txt"
-      - "stream.txt"
-      - "public/Stream.txt"
-      - "public/stream.txt"
-      - "stream.m3u8"
-      - "public/stream.m3u8"
-      - "LastCheck.txt"
-      - "public/LastCheck.txt"
+    paths:
+      - "scripts/**"
+      - ".github/workflows/**"
   schedule:
-    # Run every 5 minutes.
     - cron: "*/5 * * * *"
   workflow_dispatch:
 
@@ -47,13 +40,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add Stream.txt stream.txt public/Stream.txt public/stream.txt stream.m3u8 public/stream.m3u8 LastCheck.txt public/LastCheck.txt
-
+          git add Stream.txt stream.txt public/Stream.txt public/stream.txt \
+                  stream.m3u8 public/stream.m3u8 LastCheck.txt public/LastCheck.txt
           if git diff --cached --quiet; then
             echo "No changes detected."
             exit 0
           fi
-
           git commit -m "chore: update stream and heartbeat"
           git push origin "HEAD:${GITHUB_REF_NAME}" || {
             git pull --rebase origin "${GITHUB_REF_NAME}"
