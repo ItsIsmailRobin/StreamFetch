@@ -1,1 +1,1 @@
-https://prod-cdn01-live.toffeelive.com/live/FIFA-2026/sst/1/master_1300.m3u8?hdntl=Expires=1783007976~_GO=Generated~URLPrefix=aHR0cHM6Ly9wcm9kLWNkbjAxLWxpdmUudG9mZmVlbGl2ZS5jb20~Signature=AeQsclCP3C_o5fPbKz7hSdr71yPv5ujIvUX--wt8F4dbC0nrn94dhzXUnJnSjy2CF6q86xp1MNik0pNbV34BYFFTyjUK
+https://prod-cdn01-live.toffeelive.com/live/FIFA-2026/sst/0/master_1500.m3u8?hdntl=Expires=1782987569~_GO=Generated~URLPrefix=aHR0cHM6Ly9wcm9kLWNkbjAxLWxpdmUudG9mZmVlbGl2ZS5jb20~Signature=AeQsclD8E49TKJaioAwFJMUnGas8vyrFS1xrDoQoYIpVkaFGVB9nWJHjO_eeWQ5uRmmQuoCmVj_sgwUqfi-Z-ci98FUD
